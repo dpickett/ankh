@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "ankh.gemspec",
      "features/ankh.feature",
      "features/step_definitions/ankh_steps.rb",
      "features/support/env.rb",
