@@ -15,9 +15,11 @@ module Ankh
 
           if validator.respond_to?(:attributes) && !validator.attributes.empty?
             validator.attributes.each do |attribute|
+              _validators[nil] ||= []
               _validators[attribute.to_sym] << validator
             end
           else
+            _validators[nil] ||= []
             _validators[nil] << validator
           end
 
