@@ -4,6 +4,15 @@ require 'ankh'
 require 'spec'
 require 'spec/autorun'
 
+require 'support/active_record_spec_helper'
 Spec::Runner.configure do |config|
+  include ActiveRecordSpecHelper
   
+  config.before(:all) do
+    create_tables
+  end
+  
+  config.after(:all) do
+    drop_tables
+  end
 end

@@ -1,6 +1,13 @@
 = ankh
 
-Description goes here.
+Ankh is the ancient Egyptian sign of life. Use Ankh in your Rails projects to verify that a form poster is human
+
+validates_human :on => :create, :if => proc{|z| z.should_validate_human? }
+
+<%- form_for obj do |f| -%>
+  <%= f.label, obj.question_for_human %>
+  <%= f.human_answer_field %>
+<%- end -%>
 
 == Note on Patches/Pull Requests
  
