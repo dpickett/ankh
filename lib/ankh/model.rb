@@ -9,7 +9,6 @@ module Ankh
     def generate_human_question
       question = Ankh::Question.generate
       @human_question = question.question
-      self.human_answer = question.answer
       self.salted_human_answer = Ankh.encrypt(question.answer)
     end
   end

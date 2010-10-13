@@ -3,6 +3,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ankh'
 require 'spec'
 require 'spec/autorun'
+require 'mocha'
 
 require 'support/active_record_spec_helper'
 Spec::Runner.configure do |config|
@@ -15,4 +16,6 @@ Spec::Runner.configure do |config|
   config.after(:all) do
     drop_tables
   end
+  
+  config.mock_with :mocha
 end
