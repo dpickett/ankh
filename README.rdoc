@@ -1,17 +1,28 @@
 = ankh
 
-Ankh is the ancient Egyptian sign of life. Use Ankh in your Rails (2.3.x or 3.0) projects to verify that a form poster is human
+Ankh is the ancient Egyptian sign of life. 
 
-    validates_human :on => :create, :if => proc{|z| z.should_validate_human? }
+Use Ankh in your Rails (2.3.x or 3.0) projects to protect against bots and other spam producers. It asks a simple
+arithmatic question to verify that the poster is human.
 
+In your model:
+
+    validates_human :on => :create
+
+In your view (Rails 2 syntax shown below):
+
+    <%- obj.generate_human_question %>
     <%- form_for obj do |f| -%>
-      <%= f.human_question %>
-      <%= f.human_answer_field %>
+      <%= f.label :human_answer, obj.human_question %>
+      <%= f.text_field :human_answer %>
+      <%= f.hidden_field :salted_human_answer %>
     <%- end -%>
 
 == TODO
- * I18n support
- * automated testing of Rails 2.3.x vs. 3.0
+
+* Nice form helpers
+* I18n support
+* automated testing of Rails 2.3.x vs. 3.0
  
 == Note on Patches/Pull Requests
  
