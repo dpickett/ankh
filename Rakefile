@@ -5,8 +5,9 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ankh"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Protect against bots and other spam producers with simple mathematical questions}
+    gem.description = %Q{Use Ankh in your Rails (2.3.x or 3.0) projects to protect against bots and other spam producers. It asks a simple
+    arithmatic question to verify that the poster is human.}
     gem.email = "dpickett@enlightsolutions.com"
     gem.homepage = "http://github.com/dpickett/ankh"
     gem.authors = ["Dan Pickett"]
