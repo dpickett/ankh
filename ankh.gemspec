@@ -58,15 +58,15 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<activerecord>, [">= 2.3.8"])
-      s.add_runtime_dependency(%q<activesupport>, [">= 2.3.8"])
+      s.add_runtime_dependency(%q<activerecord>, [">= 2.3.4"])
+      s.add_runtime_dependency(%q<activesupport>, [">= 2.3.4"])
       s.add_runtime_dependency(%q<configatron>, ["= 2.6.3"])
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_development_dependency(%q<cucumber>, [">= 0"])
       s.add_development_dependency(%q<mocha>, [">= 0"])
     else
-      s.add_dependency(%q<activerecord>, [">= 2.3.8"])
-      s.add_dependency(%q<activesupport>, [">= 2.3.8"])
+      s.add_dependency(%q<activerecord>, [">= 2.3.4"])
+      s.add_dependency(%q<activesupport>, [">= 2.3.4"])
       s.add_dependency(%q<configatron>, ["= 2.6.3"])
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_dependency(%q<cucumber>, [">= 0"])
