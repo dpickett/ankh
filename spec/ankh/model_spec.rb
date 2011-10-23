@@ -4,10 +4,13 @@ describe Ankh::Model do
   INVALID_ANSWER = "3241235" #this answer will never be valid due to constraints
   class Post < ActiveRecord::Base
     validates_human
+    attr_accessor :name
+    validates_presence_of :name
   end
   
   subject do 
     p = Post.new
+    p.name = "John"
     p.generate_human_question
     p
   end
@@ -45,5 +48,14 @@ describe Ankh::Model do
     
     subject.human_answer = question.answer
     subject.save.should be_true
+  end
+  
+  it "should clear the human answer if the model is not valid" do
+    question = Ankh::Question.new
+    Ankh::Question.expects(:generate).returns(question)
+    subject.name = nil
+    subject.human_answer = question.answer
+    subject.save.should be_false
+    subject.human_answer.should be_blank
   end
 end
