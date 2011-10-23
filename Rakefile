@@ -11,8 +11,8 @@ begin
     gem.email = "dpickett@enlightsolutions.com"
     gem.homepage = "http://github.com/dpickett/ankh"
     gem.authors = ["Dan Pickett"]
-    gem.add_dependency "activerecord", ">= 2.3.8"
-    gem.add_dependency "activesupport", ">= 2.3.8"
+    gem.add_dependency "activerecord", ">= 2.3.4"
+    gem.add_dependency "activesupport", ">= 2.3.4"
     gem.add_dependency "configatron", "2.6.3"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem.add_development_dependency "yard", ">= 0"
