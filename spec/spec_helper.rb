@@ -1,13 +1,20 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'ankh'
-require 'spec'
-require 'spec/autorun'
-require 'mocha'
 
 require 'support/active_record_spec_helper'
-Spec::Runner.configure do |config|
-  include ActiveRecordSpecHelper
+
+ENV["RAILS_ENV"] ||= 'test'
+
+require File.expand_path("../dummy/config/environment.rb",  __FILE__)
+
+require 'ankh'
+require 'rspec'
+require 'mocha'
+
+ENGINE_RAILS_ROOT=File.join(File.dirname(__FILE__), '../')
+
+RSpec.configure do |config|
+  config.include ActiveRecordSpecHelper
   
   config.before(:all) do
     create_tables

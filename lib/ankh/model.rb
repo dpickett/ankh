@@ -13,5 +13,3 @@ module Ankh
     end
   end
 end
-
-ActiveRecord::Base.extend(Ankh::Validations::HelperMethods)

@@ -1,14 +1,12 @@
-require "rubygems"
-require "active_record"
 require "digest/sha1"
 require "configatron"
 
-require "ankh/rails/legacy"
-
 require "ankh/question"
-require "ankh/validations/human"
+require "ankh/validations/human_validator"
 
 require "ankh/model"
+
+require "ankh/railtie" if defined?(Rails)
 
 module Ankh
   def self.salt=(salt)

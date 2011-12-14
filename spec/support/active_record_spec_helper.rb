@@ -1,6 +1,7 @@
 # taken from the state_machine gem
 # Load TestCase helpers
 require 'active_support/test_case'
+require 'active_record'
 require 'active_record/fixtures'
 
 begin
