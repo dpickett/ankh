@@ -2,7 +2,9 @@ require "spec_helper"
 
 describe Ankh::Model do
   INVALID_ANSWER = "3241235" #this answer will never be valid due to constraints
-  class Post < ActiveRecord::Base
+  class Post
+    include ActiveModel::Validations
+    extend Ankh::Model
     validates_human
     attr_accessor :name
     validates_presence_of :name
@@ -26,19 +28,19 @@ describe Ankh::Model do
   
   it "should not save if I do not specify a human answer" do
     subject.human_answer = ""
-    subject.save.should be_false
+    subject.should_not be_valid
     subject.errors[:human_answer].should_not be_nil
   end
   
   it "should clear out the human answer if validation fails" do
     subject.human_answer = INVALID_ANSWER
-    subject.save.should be_false
+    subject.should_not be_valid
     subject.human_answer.should be_blank
   end
   
   it "should not save if I do not match the intended answer" do
     subject.human_answer = INVALID_ANSWER
-    subject.save.should be_false
+    subject.should_not be_valid
     subject.errors[:human_answer].should_not be_nil
   end
   
@@ -47,7 +49,7 @@ describe Ankh::Model do
     Ankh::Question.expects(:generate).returns(question)
     
     subject.human_answer = question.answer
-    subject.save.should be_true
+    subject.should be_valid
   end
   
   it "should clear the human answer if the model is not valid" do
@@ -55,7 +57,8 @@ describe Ankh::Model do
     Ankh::Question.expects(:generate).returns(question)
     subject.name = nil
     subject.human_answer = question.answer
-    subject.save.should be_false
+    subject.should_not be_valid
     subject.human_answer.should be_blank
   end
 end
+

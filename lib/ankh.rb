@@ -2,10 +2,10 @@ require "digest/sha1"
 require "configatron"
 
 require "ankh/question"
+
 require "ankh/validations/human_validator"
 
 require "ankh/model"
-
 require "ankh/railtie" if defined?(Rails)
 
 module Ankh
