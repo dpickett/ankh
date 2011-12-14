@@ -2,12 +2,23 @@
 
 Ankh is the ancient Egyptian sign of life. 
 
-Use Ankh in your Rails (2.3.x or 3.0) projects to protect against bots and other spam producers. It asks a simple
+Use Ankh in your Rails (>= 3.0) projects to protect against bots and other spam producers. It asks a simple
 arithmatic question to verify that the poster is human.
 
-In your model:
+In your activerecord model:
 
-    validates_human :on => :create
+    class Post < ActiveRecord::Base
+      validates_human :on => :create
+    end
+
+Ankh is also available for ActiveModel objects:
+
+    class Foo
+      include ActiveModel::Validations
+      extend Ankh::Model
+      validates_human :on => :create
+    end
+      
 
 In your view (Rails 2 syntax shown below):
 
@@ -22,7 +33,6 @@ In your view (Rails 2 syntax shown below):
 
 * Nice form helpers
 * I18n support
-* automated testing of Rails 2.3.x vs. 3.0
  
 == Note on Patches/Pull Requests
  
@@ -36,4 +46,4 @@ In your view (Rails 2 syntax shown below):
 
 == Copyright
 
-Copyright (c) 2010 Dan Pickett. See LICENSE for details.
+Copyright (c) 2011 Dan Pickett. See LICENSE for details.
