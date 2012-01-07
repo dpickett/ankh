@@ -1,5 +1,7 @@
 = ankh
 
+{<img src="https://secure.travis-ci.org/dpickett/ankh.png" />}[http://travis-ci.org/dpickett/ankh
+
 Ankh is the ancient Egyptian sign of life. 
 
 Use Ankh in your Rails (>= 3.0) projects to protect against bots and other spam producers. It asks a simple
