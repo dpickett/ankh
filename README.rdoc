@@ -1,6 +1,6 @@
 = ankh
 
-{<img src="https://secure.travis-ci.org/dpickett/ankh.png" />}[http://travis-ci.org/dpickett/ankh
+{<img src="https://secure.travis-ci.org/dpickett/ankh.png" />}[http://travis-ci.org/dpickett/ankh]
 
 Ankh is the ancient Egyptian sign of life. 
 
