@@ -11,3 +11,5 @@ begin
 rescue LoadError
   puts "RSpec is not installed"
 end
+
+task :default => :spec
