@@ -43,7 +43,7 @@ describe Ankh::Model do
   end
 
   it "should save if I match the intended answer" do
-    question = Ankh::Question.new
+    question = Ankh::Question.new("question", "answer")
     Ankh::Question.expects(:generate).returns(question)
 
     subject.human_answer = question.answer
@@ -51,7 +51,7 @@ describe Ankh::Model do
   end
 
   it "should clear the human answer if the model is not valid" do
-    question = Ankh::Question.new
+    question = Ankh::Question.new("question", "answer")
     Ankh::Question.expects(:generate).returns(question)
     subject.name = nil
     subject.human_answer = question.answer

@@ -1,23 +1,19 @@
 module Ankh
   class Question
-    OPERATIONS = [
-      "+",
-      "-"
-    ]
+    attr_reader :question, :answer
 
-    attr_reader :first_number, :second_number, :operation, :question, :answer
-
-    def initialize
-      @second_number = rand(9)
-      @first_number = @second_number + rand(9)
-      @operation = OPERATIONS[rand(2)]
-
-      @question = "What is #{first_number} #{operation} #{second_number}?"
-      @answer = @first_number.send(@operation, @second_number)
+    def initialize(question, answer)
+      @question = question
+      @answer = answer
     end
 
     def self.generate
-      new
+      factory.create
+    end
+
+    protected
+    def self.factory
+      Ankh.random_factory
     end
   end
 end
