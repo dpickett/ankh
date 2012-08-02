@@ -6,14 +6,14 @@ module Ankh
       end
 
       def validate(record)
-        if has_valid_answer?(record)
+        if has_invalid_answer?(record)
           record.errors.add(:human_answer, @options[:message] || "is not valid")
         end
         record.human_answer = ""
       end
 
       private
-      def has_valid_answer?(record)
+      def has_invalid_answer?(record)
         record.salted_human_answer.present? && Ankh.encrypt(record.human_answer) != record.salted_human_answer
       end
     end
