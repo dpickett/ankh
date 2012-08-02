@@ -21,24 +21,25 @@ module ActiveRecordSpecHelper
   TABLES = [
     "posts"
   ]
-  
+
   def create_tables
-    each_table do |table_name| 
+    each_table do |table_name|
       ActiveRecord::Base.connection.create_table table_name unless table_exists?(table_name)
     end
   end
-  
+
   def drop_tables
-    each_table do |table_name| 
+    each_table do |table_name|
       ActiveRecord::Base.connection.drop_table table_name if table_exists?(table_name)
     end
   end
-  
+
   def table_exists?(table_name)
     ActiveRecord::Base.connection.table_exists?(table_name)
   end
-  
+
   def each_table(&block)
     TABLES.each { |table_name| block.call(table_name) }
   end
 end
+

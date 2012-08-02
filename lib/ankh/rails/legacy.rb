@@ -4,10 +4,10 @@ module Ankh
       def extended(base)
         base.class_attribute :_validators
       end
-      
+
       def validates_with(*args, &block)
         _validators ||= {}
-        
+
         options = args.extract_options!
         args.each do |klass|
           validator = klass.new(options, &block)
@@ -26,7 +26,7 @@ module Ankh
           validate(validator, options)
         end
       end
-      
+
       private
         def _merge_attributes(attr_names)
           options = attr_names.extract_options!
@@ -39,3 +39,4 @@ end
 unless ActiveRecord::Base.respond_to?(:validates_with)
   ActiveRecord::Base.extend Ankh::Legacy::ActiveRecord
 end
+

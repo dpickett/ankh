@@ -5,7 +5,7 @@ module Ankh
       base.send(:attr_reader, :human_question)
       base.send(:attr_accessor, :salted_human_answer)
     end
-    
+
     def generate_human_question
       question = Ankh::Question.generate
       @human_question = question.question
@@ -15,3 +15,4 @@ module Ankh
 end
 
 ActiveRecord::Base.extend(Ankh::Validations::HelperMethods)
+
