@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Dan Pickett}]
-  s.date = %q{2011-10-23}
+  s.date = %q{2012-08-03}
   s.description = %q{Use Ankh in your Rails (2.3.x or 3.0) projects to protect against bots and other spam producers. It asks a simple
     arithmatic question to verify that the poster is human.}
   s.email = %q{dpickett@enlightsolutions.com}
@@ -19,20 +19,25 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".rspec",
+    "Guardfile",
     "LICENSE",
     "README.rdoc",
     "Rakefile",
     "VERSION",
     "ankh.gemspec",
-    "features/ankh.feature",
-    "features/step_definitions/ankh_steps.rb",
-    "features/support/env.rb",
     "lib/ankh.rb",
     "lib/ankh/model.rb",
     "lib/ankh/question.rb",
+    "lib/ankh/question_factory/constant_sequence.rb",
+    "lib/ankh/question_factory/day_sequence.rb",
+    "lib/ankh/question_factory/month_sequence.rb",
+    "lib/ankh/question_factory/simple_math.rb",
     "lib/ankh/rails/legacy.rb",
     "lib/ankh/validations/human.rb",
     "spec/ankh/model_spec.rb",
+    "spec/ankh/question_factory/month_sequence_spec.rb",
+    "spec/ankh/question_factory/simple_math_spec.rb",
     "spec/ankh/question_spec.rb",
     "spec/ankh_spec.rb",
     "spec/spec.opts",
@@ -52,14 +57,12 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<activesupport>, [">= 2.3.4"])
       s.add_runtime_dependency(%q<configatron>, ["= 2.6.3"])
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
-      s.add_development_dependency(%q<cucumber>, [">= 0"])
       s.add_development_dependency(%q<mocha>, [">= 0"])
     else
       s.add_dependency(%q<activerecord>, [">= 2.3.4"])
       s.add_dependency(%q<activesupport>, [">= 2.3.4"])
       s.add_dependency(%q<configatron>, ["= 2.6.3"])
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
-      s.add_dependency(%q<cucumber>, [">= 0"])
       s.add_dependency(%q<mocha>, [">= 0"])
     end
   else
@@ -67,7 +70,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<activesupport>, [">= 2.3.4"])
     s.add_dependency(%q<configatron>, ["= 2.6.3"])
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
-    s.add_dependency(%q<cucumber>, [">= 0"])
     s.add_dependency(%q<mocha>, [">= 0"])
   end
 end
