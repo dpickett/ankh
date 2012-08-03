@@ -14,7 +14,7 @@ module Ankh
 
       private
       def has_invalid_answer?(record)
-        record.salted_human_answer.present? && Ankh.encrypt(record.human_answer) != record.salted_human_answer
+        record.salted_human_answer.present? && Ankh.encrypt(record.human_answer.try(:downcase)) != record.salted_human_answer
       end
     end
 

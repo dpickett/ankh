@@ -1,9 +1,9 @@
-require "rubygems"
-require "active_record"
-require "digest/sha1"
-require "configatron"
+require 'rubygems'
+require 'active_record'
+require 'digest/sha1'
+require 'configatron'
 
-require "ankh/rails/legacy"
+require 'ankh/rails/legacy'
 
 module Ankh
   def self.salt=(salt)
@@ -35,9 +35,10 @@ module Ankh
   end
 end
 
-require "ankh/question_factory/simple_math"
+require 'ankh/question_factory/simple_math'
+require 'ankh/question_factory/month_sequence'
 
-require "ankh/question"
-require "ankh/validations/human"
+require 'ankh/question'
+require 'ankh/validations/human'
 
-require "ankh/model"
+require 'ankh/model'

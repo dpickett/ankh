@@ -21,3 +21,4 @@ module Ankh
 end
 
 Ankh.register_factory(:simple_math, Ankh::QuestionFactory::SimpleMath)
+
