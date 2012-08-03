@@ -35,8 +35,11 @@ module Ankh
   end
 end
 
+require 'ankh/question_factory/constant_sequence'
+
 require 'ankh/question_factory/simple_math'
 require 'ankh/question_factory/month_sequence'
+require 'ankh/question_factory/day_sequence'
 
 require 'ankh/question'
 require 'ankh/validations/human'
